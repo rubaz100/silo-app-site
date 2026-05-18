@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Support - Silo UNM</title>
+  <meta name="description" content="Support information for Silo UNM.">
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f5f7fb;
+      --surface: #ffffff;
+      --text: #111827;
+      --muted: #5b6472;
+      --line: #d8dee9;
+      --accent: #0a84ff;
+      --accent-dark: #0067d9;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, #fbfcff 0%, var(--bg) 72%, #ffffff 100%);
+      color: var(--text);
+      font-size: 17px;
+      line-height: 1.6;
+    }
+
+    a {
+      color: #1d4f91;
+      font-weight: 700;
+    }
+
+    .wrap {
+      width: min(860px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 42px 0 54px;
+    }
+
+    header {
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 34px;
+      padding-bottom: 24px;
+    }
+
+    .back {
+      display: inline-block;
+      margin-bottom: 26px;
+      color: var(--accent-dark);
+      text-decoration: none;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(38px, 7vw, 64px);
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      max-width: 720px;
+      color: var(--muted);
+      font-size: 21px;
+      line-height: 1.35;
+      margin: 18px 0 0;
+    }
+
+    section {
+      border-bottom: 1px solid var(--line);
+      padding: 26px 0;
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: 24px;
+      line-height: 1.2;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 22px;
+    }
+
+    li + li {
+      margin-top: 8px;
+    }
+
+    .contact {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface);
+      padding: 20px;
+    }
+
+    footer {
+      padding-top: 24px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    footer nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px 20px;
+      margin-top: 12px;
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <a class="back" href="https://rubaz100.github.io/silo-app-site/">Silo UNM</a>
+      <h1>Support</h1>
+      <p class="lead">Help for Silo UNM, a Usenet download manager for iPhone and iPad.</p>
+    </header>
+
+    <section class="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">Contact</h2>
+      <p>Email support: <a href="mailto:silo@zabur.de">silo@zabur.de</a></p>
+      <p>Include your app version, iOS version, device model, and a short description of the issue. Please do not send passwords, private server credentials, or copyrighted files.</p>
+    </section>
+
+    <section aria-labelledby="scope-title">
+      <h2 id="scope-title">Support Scope</h2>
+      <p>Silo does not host, index, sell, or provide Usenet content. Support can help with app functionality, imports, download handling, storage behavior, and general troubleshooting.</p>
+      <p>You are responsible for using Silo only with content you are allowed to access and download.</p>
+    </section>
+
+    <section aria-labelledby="checks-title">
+      <h2 id="checks-title">Before Contacting Support</h2>
+      <ul>
+        <li>Confirm that your NNTP server host, port, username, password, and SSL/TLS setting are correct.</li>
+        <li>Check whether your NNTP provider account is active and allows enough simultaneous connections.</li>
+        <li>Make sure the selected download folder is still available and has enough free storage.</li>
+        <li>If SSL/TLS is disabled, credentials and transfer data may be sent in plaintext between your device and your configured NNTP server.</li>
+      </ul>
+    </section>
+
+    <footer>
+      <span>&copy; 2026 Silo UNM. All rights reserved.</span>
+      <nav aria-label="Legal and app links">
+        <a href="https://rubaz100.github.io/silo-app-site/">Marketing / App Information</a>
+        <a href="https://rubaz100.github.io/silo-app-site/privacy.html">Privacy Policy</a>
+      </nav>
+    </footer>
+  </main>
+</body>
+</html>

@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy - Silo UNM</title>
+  <meta name="description" content="Privacy Policy for Silo UNM.">
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f5f7fb;
+      --surface: #ffffff;
+      --text: #111827;
+      --muted: #5b6472;
+      --line: #d8dee9;
+      --accent-dark: #0067d9;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, #fbfcff 0%, var(--bg) 72%, #ffffff 100%);
+      color: var(--text);
+      font-size: 17px;
+      line-height: 1.6;
+    }
+
+    a {
+      color: #1d4f91;
+      font-weight: 700;
+    }
+
+    .wrap {
+      width: min(900px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 42px 0 56px;
+    }
+
+    header {
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 34px;
+      padding-bottom: 24px;
+    }
+
+    .back {
+      display: inline-block;
+      margin-bottom: 26px;
+      color: var(--accent-dark);
+      text-decoration: none;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(38px, 7vw, 64px);
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 21px;
+      line-height: 1.35;
+      margin: 18px 0 0;
+    }
+
+    section {
+      border-bottom: 1px solid var(--line);
+      padding: 26px 0;
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: 24px;
+      line-height: 1.2;
+    }
+
+    h3 {
+      margin: 22px 0 8px;
+      font-size: 19px;
+      line-height: 1.25;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    ul {
+      margin: 0 0 14px;
+      padding-left: 22px;
+    }
+
+    li + li {
+      margin-top: 8px;
+    }
+
+    address {
+      font-style: normal;
+      margin-top: 10px;
+      white-space: pre-line;
+    }
+
+    .summary {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface);
+      padding: 20px;
+    }
+
+    footer {
+      padding-top: 24px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    footer nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px 20px;
+      margin-top: 12px;
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <a class="back" href="https://rubaz100.github.io/silo-app-site/">Silo UNM</a>
+      <h1>Privacy Policy</h1>
+      <p class="lead">This Privacy Policy explains how Silo UNM handles information in the app, on this website, and through support requests.</p>
+      <p>Last updated: May 18, 2026</p>
+    </header>
+
+    <section class="summary" aria-labelledby="summary-title">
+      <h2 id="summary-title">Short Version</h2>
+      <ul>
+        <li>Silo UNM does not include advertising, tracking SDKs, third-party analytics SDKs, or a developer-operated backend.</li>
+        <li>The app does not create user accounts and does not send your NNTP credentials, downloaded files, NZB files, or archive passwords to the developer.</li>
+        <li>Your configured NNTP server details and app settings are stored locally on your device. Sensitive credentials are stored in the iOS Keychain.</li>
+        <li>The app connects to NNTP servers you configure. Those servers are operated by your chosen provider, not by Silo UNM.</li>
+        <li>If you contact support, the information you send by email is used to handle your request.</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="controller-title">
+      <h2 id="controller-title">Controller and Contact</h2>
+      <p>The controller responsible for this Privacy Policy is:</p>
+      <address>Zabur Asadi
+c/o Impressumservice Dein Impressum
+Stettiner Stra&szlig;e 41
+35410 Hungen
+Germany</address>
+      <p>Email: <a href="mailto:silo@zabur.de">silo@zabur.de</a></p>
+    </section>
+
+    <section aria-labelledby="scope-title">
+      <h2 id="scope-title">Scope</h2>
+      <p>This Privacy Policy applies to the Silo UNM iOS app, the website at <a href="https://rubaz100.github.io/silo-app-site/">https://rubaz100.github.io/silo-app-site/</a>, and support communication sent to <a href="mailto:silo@zabur.de">silo@zabur.de</a>.</p>
+      <p>Silo UNM is a tool for managing Usenet downloads. Silo UNM does not host, index, provide, sell, or recommend Usenet content.</p>
+    </section>
+
+    <section aria-labelledby="app-data-title">
+      <h2 id="app-data-title">Data Handled by the App</h2>
+      <h3>Local app data</h3>
+      <p>The app stores operational data locally on your device so it can function. This may include:</p>
+      <ul>
+        <li>NNTP server host, port, SSL/TLS preference, and connection count.</li>
+        <li>Download queue state, progress information, selected download folder bookmarks, and app preferences.</li>
+        <li>NZB files, downloaded files, repair files, extracted files, and temporary working files in the folders used by the app.</li>
+      </ul>
+      <p>NNTP usernames, NNTP passwords, and archive passwords are stored in the iOS Keychain where supported by the app. The app is designed to store these credentials locally and not transmit them to the developer.</p>
+
+      <h3>Connections to user-configured NNTP servers</h3>
+      <p>When you configure an NNTP server, the app connects from your device to that server to test the connection and download content. Your NNTP provider may process information such as your IP address, account credentials, requested message IDs, and transfer metadata. That processing is controlled by your chosen provider and its own terms and privacy policy.</p>
+      <p>If SSL/TLS is disabled in the app settings, your username, password, and transfer data may be sent in plaintext between your device and the configured NNTP server.</p>
+
+      <h3>No developer collection through the app</h3>
+      <p>Silo UNM does not include a developer-operated backend, user accounts, advertising, tracking SDKs, third-party analytics SDKs, or crash-reporting SDKs. The developer does not receive your downloaded files, NZB files, NNTP credentials, archive passwords, or local queue data through the app.</p>
+    </section>
+
+    <section aria-labelledby="apple-title">
+      <h2 id="apple-title">Apple App Store and Apple Analytics</h2>
+      <p>The app is distributed through Apple's App Store. Apple may process App Store, purchase, download, device, diagnostic, and usage information under Apple's own privacy terms and user settings.</p>
+      <p>Apple's App Store Connect Analytics may provide the developer with aggregated app performance, usage, acquisition, crash, and commerce metrics. Apple states that App Store Connect Analytics uses data from users who have agreed to share analytics data and applies privacy thresholds before showing data. These Apple-provided metrics do not require an analytics SDK inside Silo UNM and are not used by Silo UNM for tracking users across apps or websites.</p>
+      <p>For Apple's privacy information, see <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a>.</p>
+    </section>
+
+    <section aria-labelledby="support-data-title">
+      <h2 id="support-data-title">Support Requests</h2>
+      <p>If you contact support, the developer processes the information you voluntarily include in your message, such as your email address, app version, device model, iOS version, issue description, and attachments you choose to send.</p>
+      <p>Support data is used only to respond to your request, troubleshoot issues, protect the app and users, and comply with legal obligations. Please do not send passwords, private server credentials, or copyrighted files.</p>
+    </section>
+
+    <section aria-labelledby="website-title">
+      <h2 id="website-title">Website Hosting</h2>
+      <p>This website is hosted on GitHub Pages. When you visit the website, GitHub may process technical data such as IP address, browser information, request timestamps, and server logs to deliver and secure the site. GitHub processes this data under its own terms and privacy documentation. See <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub's General Privacy Statement</a>.</p>
+      <p>The website does not use cookies, advertising pixels, tracking scripts, or third-party analytics scripts.</p>
+    </section>
+
+    <section aria-labelledby="legal-bases-title">
+      <h2 id="legal-bases-title">Legal Bases</h2>
+      <p>If the GDPR or similar privacy law applies, the legal bases for processing are:</p>
+      <ul>
+        <li>Article 6(1)(b) GDPR: performance of a contract or pre-contractual steps, for operating the app as requested by you and responding to support requests.</li>
+        <li>Article 6(1)(f) GDPR: legitimate interests, for maintaining, securing, improving, and troubleshooting the app and website.</li>
+        <li>Article 6(1)(c) GDPR: legal obligations, where retention or disclosure is required by applicable law.</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="recipients-title">
+      <h2 id="recipients-title">Recipients and Third Parties</h2>
+      <p>Depending on your use, data may be processed by the following categories of recipients:</p>
+      <ul>
+        <li>Apple, for App Store distribution, payments if applicable, device diagnostics, and App Store Connect Analytics.</li>
+        <li>GitHub, for hosting this public website through GitHub Pages.</li>
+        <li>Email and infrastructure providers used to receive and send support messages.</li>
+        <li>NNTP providers that you configure in the app. These providers are selected by you and are not operated by Silo UNM.</li>
+        <li>Authorities or legal advisers if required to comply with law or defend legal claims.</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="transfers-title">
+      <h2 id="transfers-title">International Transfers</h2>
+      <p>Some recipients, including Apple, GitHub, and email infrastructure providers, may process data outside your country or outside the European Economic Area. Where required, such transfers rely on appropriate safeguards such as adequacy decisions, standard contractual clauses, or other mechanisms permitted by applicable law.</p>
+    </section>
+
+    <section aria-labelledby="retention-title">
+      <h2 id="retention-title">Retention</h2>
+      <ul>
+        <li>Local app data remains on your device until you delete it in the app, remove downloaded files, reset settings, or uninstall the app.</li>
+        <li>Support emails are kept only as long as needed to handle the request, follow up on the issue, and meet legal obligations. Routine support correspondence is generally deleted or anonymized no later than 12 months after the issue is resolved unless a longer period is necessary.</li>
+        <li>Website logs and App Store analytics data are retained according to GitHub's and Apple's respective policies.</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="rights-title">
+      <h2 id="rights-title">Your Rights</h2>
+      <p>Depending on your location, you may have the right to request access, rectification, deletion, restriction, portability, or objection to processing of your personal data. You may also have the right to lodge a complaint with a competent data protection authority.</p>
+      <p>To exercise privacy rights, contact <a href="mailto:silo@zabur.de">silo@zabur.de</a>. Because most app data is stored only on your device and is not available to the developer, some requests may need to be handled directly on your device or with your selected NNTP provider, Apple, or GitHub.</p>
+    </section>
+
+    <section aria-labelledby="children-title">
+      <h2 id="children-title">Children</h2>
+      <p>Silo UNM is not directed to children. The developer does not knowingly collect personal data from children through the app.</p>
+    </section>
+
+    <section aria-labelledby="changes-title">
+      <h2 id="changes-title">Changes</h2>
+      <p>This Privacy Policy may be updated when the app, website, legal requirements, or data practices change. The updated version will be published on this page with a new "Last updated" date.</p>
+    </section>
+
+    <footer>
+      <span>&copy; 2026 Silo UNM. All rights reserved.</span>
+      <nav aria-label="Legal and app links">
+        <a href="https://rubaz100.github.io/silo-app-site/">Marketing / App Information</a>
+        <a href="https://rubaz100.github.io/silo-app-site/support.html">Support</a>
+      </nav>
+    </footer>
+  </main>
+</body>
+</html>
