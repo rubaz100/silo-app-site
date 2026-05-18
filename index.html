@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Silo UNM</title>
+  <meta name="description" content="Silo UNM - ein klarer, schneller Usenet-Download-Manager fuer iPhone und iPad.">
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f5f7fb;
+      --surface: #ffffff;
+      --surface-soft: #eef4ff;
+      --text: #111827;
+      --muted: #5b6472;
+      --line: #d8dee9;
+      --accent: #0a84ff;
+      --accent-dark: #0067d9;
+      --shadow: 0 20px 60px rgba(15, 23, 42, 0.12);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top left, rgba(10, 132, 255, 0.18), transparent 34rem),
+        linear-gradient(180deg, #fbfcff 0%, var(--bg) 64%, #ffffff 100%);
+      color: var(--text);
+      font-size: 17px;
+      line-height: 1.5;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .page {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .hero {
+      min-height: 72vh;
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.95fr);
+      gap: 56px;
+      align-items: center;
+      padding: 72px 0 44px;
+    }
+
+    .eyebrow {
+      margin: 0 0 16px;
+      color: var(--accent-dark);
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(52px, 8vw, 92px);
+      line-height: 0.95;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      max-width: 650px;
+      margin: 24px 0 0;
+      color: var(--muted);
+      font-size: clamp(21px, 3vw, 30px);
+      line-height: 1.25;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+      margin-top: 34px;
+    }
+
+    .app-store-button {
+      display: inline-flex;
+      min-height: 56px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 16px;
+      background: #111827;
+      color: #ffffff;
+      padding: 10px 20px;
+      text-decoration: none;
+      box-shadow: 0 12px 28px rgba(17, 24, 39, 0.22);
+      transition: transform 160ms ease, background 160ms ease;
+    }
+
+    .app-store-button:hover {
+      background: #000000;
+      transform: translateY(-1px);
+    }
+
+    .button-copy {
+      display: grid;
+      gap: 1px;
+      text-align: left;
+    }
+
+    .button-copy span:first-child {
+      font-size: 12px;
+      opacity: 0.82;
+    }
+
+    .button-copy span:last-child {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 1.1;
+    }
+
+    .availability {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .device {
+      position: relative;
+      min-height: 560px;
+      border-radius: 56px;
+      background: #111827;
+      padding: 16px;
+      box-shadow: var(--shadow);
+    }
+
+    .screen {
+      height: 100%;
+      min-height: 528px;
+      overflow: hidden;
+      border-radius: 42px;
+      background: linear-gradient(180deg, #f8fbff 0%, #edf4ff 100%);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      color: #152033;
+    }
+
+    .status {
+      display: flex;
+      justify-content: space-between;
+      padding: 18px 24px 8px;
+      color: #344055;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .notch {
+      width: 110px;
+      height: 28px;
+      margin: -2px auto 16px;
+      border-radius: 0 0 18px 18px;
+      background: #111827;
+    }
+
+    .app-shell {
+      padding: 0 22px 24px;
+    }
+
+    .app-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 22px;
+    }
+
+    .app-title h2 {
+      margin: 0;
+      font-size: 30px;
+      line-height: 1.05;
+    }
+
+    .pill {
+      flex: 0 0 auto;
+      border-radius: 999px;
+      background: rgba(10, 132, 255, 0.12);
+      color: var(--accent-dark);
+      padding: 7px 11px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .progress-card {
+      border-radius: 26px;
+      background: #ffffff;
+      padding: 22px;
+      box-shadow: 0 16px 36px rgba(57, 76, 105, 0.12);
+    }
+
+    .progress-card h3 {
+      margin: 0 0 6px;
+      font-size: 18px;
+    }
+
+    .progress-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .bar {
+      height: 10px;
+      overflow: hidden;
+      border-radius: 999px;
+      background: #dce7f8;
+      margin: 18px 0 8px;
+    }
+
+    .bar span {
+      display: block;
+      width: 72%;
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--accent), #22c55e);
+    }
+
+    .meta-row {
+      display: flex;
+      justify-content: space-between;
+      color: #687386;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .file-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .file-item {
+      display: grid;
+      grid-template-columns: 42px 1fr auto;
+      gap: 12px;
+      align-items: center;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.68);
+      padding: 12px;
+      border: 1px solid rgba(160, 174, 194, 0.28);
+    }
+
+    .file-icon {
+      display: grid;
+      width: 42px;
+      height: 42px;
+      place-items: center;
+      border-radius: 13px;
+      background: var(--surface-soft);
+      color: var(--accent-dark);
+      font-weight: 800;
+    }
+
+    .file-name {
+      margin: 0;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .file-detail {
+      margin: 2px 0 0;
+      color: #687386;
+      font-size: 12px;
+    }
+
+    .file-state {
+      color: #22a06b;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      padding: 26px 0 74px;
+    }
+
+    .feature-card {
+      min-height: 190px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.86);
+      padding: 24px;
+      box-shadow: 0 12px 32px rgba(28, 39, 57, 0.07);
+    }
+
+    .feature-icon {
+      display: grid;
+      width: 42px;
+      height: 42px;
+      place-items: center;
+      border-radius: 12px;
+      background: #e9f3ff;
+      color: var(--accent-dark);
+      font-size: 22px;
+      font-weight: 800;
+    }
+
+    .feature-card h2 {
+      margin: 20px 0 8px;
+      font-size: 22px;
+      line-height: 1.15;
+    }
+
+    .feature-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.72);
+    }
+
+    .footer-inner {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px 24px;
+      align-items: center;
+      justify-content: space-between;
+      padding: 26px 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 20px;
+    }
+
+    .footer-links a {
+      color: #1d4f91;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 860px) {
+      .hero {
+        min-height: auto;
+        grid-template-columns: 1fr;
+        gap: 34px;
+        padding-top: 46px;
+      }
+
+      .device {
+        width: min(100%, 430px);
+        min-height: 520px;
+        margin: 0 auto;
+      }
+
+      .screen {
+        min-height: 488px;
+      }
+
+      .features {
+        grid-template-columns: 1fr;
+        padding-bottom: 54px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .page,
+      .footer-inner {
+        width: min(100% - 28px, 1120px);
+      }
+
+      .hero {
+        padding-top: 34px;
+      }
+
+      .subtitle {
+        font-size: 21px;
+      }
+
+      .actions {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .app-store-button {
+        width: 100%;
+      }
+
+      .device {
+        min-height: 454px;
+        border-radius: 42px;
+        padding: 12px;
+      }
+
+      .screen {
+        min-height: 430px;
+        border-radius: 32px;
+      }
+
+      .status {
+        padding-inline: 18px;
+      }
+
+      .notch {
+        width: 92px;
+        height: 24px;
+        margin-bottom: 12px;
+      }
+
+      .app-shell {
+        padding-inline: 16px;
+      }
+
+      .app-title h2 {
+        font-size: 26px;
+      }
+
+      .progress-card {
+        padding: 18px;
+      }
+
+      .file-item {
+        grid-template-columns: 38px 1fr;
+      }
+
+      .file-state {
+        grid-column: 2;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero" aria-labelledby="hero-title">
+      <div>
+        <p class="eyebrow">Usenet Download Manager fuer iOS</p>
+        <h1 id="hero-title">Silo UNM</h1>
+        <p class="subtitle">Downloads verwalten, Dateien sortieren und den Fortschritt jederzeit im Blick behalten - schnell, ruhig und gemacht fuer iPhone und iPad.</p>
+        <div class="actions">
+          <!-- TODO APP-STORE-LINK ERSETZEN: href auf die finale App-Store-URL setzen. -->
+          <a class="app-store-button" href="#" aria-label="Silo UNM im App Store laden">
+            <span class="button-copy">
+              <span>Laden im</span>
+              <span>App Store</span>
+            </span>
+          </a>
+          <span class="availability">Platzhalter bis zur App-Store-Freigabe</span>
+        </div>
+      </div>
+
+      <div class="device" aria-label="Silo UNM App Vorschau">
+        <div class="screen">
+          <div class="status">
+            <span>9:41</span>
+            <span>5G&nbsp;&nbsp;100%</span>
+          </div>
+          <div class="notch" aria-hidden="true"></div>
+          <div class="app-shell">
+            <div class="app-title">
+              <h2>Downloads</h2>
+              <span class="pill">Aktiv</span>
+            </div>
+            <div class="progress-card">
+              <h3>Archivpaket entpacken</h3>
+              <p>Automatische Pruefung und saubere Ablage nach Abschluss.</p>
+              <div class="bar" aria-hidden="true"><span></span></div>
+              <div class="meta-row">
+                <span>72%</span>
+                <span>18 MB/s</span>
+              </div>
+            </div>
+            <div class="file-list">
+              <div class="file-item">
+                <span class="file-icon">NZB</span>
+                <div>
+                  <p class="file-name">Queue importiert</p>
+                  <p class="file-detail">12 Dateien erkannt</p>
+                </div>
+                <span class="file-state">Bereit</span>
+              </div>
+              <div class="file-item">
+                <span class="file-icon">PAR</span>
+                <div>
+                  <p class="file-name">Integritaet</p>
+                  <p class="file-detail">Reparaturdaten verfuegbar</p>
+                </div>
+                <span class="file-state">OK</span>
+              </div>
+              <div class="file-item">
+                <span class="file-icon">RAR</span>
+                <div>
+                  <p class="file-name">Ablage</p>
+                  <p class="file-detail">Dateien werden vorbereitet</p>
+                </div>
+                <span class="file-state">Laeuft</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features" aria-label="Funktionen">
+      <article class="feature-card">
+        <span class="feature-icon" aria-hidden="true">&darr;</span>
+        <h2>Downloads im Griff</h2>
+        <p>Importiere Queues, beobachte Fortschritte und erkenne aktive Aufgaben auf einen Blick.</p>
+      </article>
+      <article class="feature-card">
+        <span class="feature-icon" aria-hidden="true">&#9638;</span>
+        <h2>Klare Dateiverwaltung</h2>
+        <p>Behalte Archive, Reparaturdaten und Zielordner in einer uebersichtlichen Struktur.</p>
+      </article>
+      <article class="feature-card">
+        <span class="feature-icon" aria-hidden="true">&#9889;</span>
+        <h2>Starke Performance</h2>
+        <p>Ein schlankes iOS-Erlebnis mit Fokus auf Geschwindigkeit, Kontrolle und ruhige Bedienung.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <span>&copy; 2026 Silo UNM. Alle Rechte vorbehalten.</span>
+      <nav class="footer-links" aria-label="Rechtliche und App-Links">
+        <!-- TODO SUPPORT-URL ERSETZEN: href auf die finale Support-Seite setzen. -->
+        <a href="#">Support URL</a>
+        <!-- TODO MARKETING-URL ERSETZEN: href auf die finale Marketing-URL oder App-Informationsseite setzen. -->
+        <a href="#">Marketing URL / App-Informationen</a>
+        <!-- TODO PRIVACY-POLICY-LINK ERSETZEN: href auf die finale Datenschutzerklaerung setzen. -->
+        <a href="#">Privacy Policy</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
